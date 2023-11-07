@@ -1,2 +1,2 @@
 # Leetcode
-My study note
+My study note for leetcode algorithm
