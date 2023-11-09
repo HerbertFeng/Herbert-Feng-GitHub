@@ -8,12 +8,14 @@ from typing import Optional
 
 
 class TreeNode(object):
-     def __init__(self, val=0, left=None, right=None):
-         self.val = val
-         self.left = left
-         self.right = right
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 
 class Solution:
+
     def build_tree(self, datas=[]):
         '''
         :param datas: [4,2,7,1,6,None,5]
@@ -41,7 +43,7 @@ class Solution:
         depth = 1
         while queue:
             size = len(queue)
-            for i in range (size):
+            for i in range(size):
                 node = queue.pop(0)
                 if not node.left and not node.right:
                     return depth
@@ -49,9 +51,9 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            depth+=1
+            depth += 1
+
 
 tree_obj = Solution()
-tree = tree_obj.build_tree([3,9,20,None,None,15,7])
+tree = tree_obj.build_tree([3, 9, 20, None, None, 15, 7])
 print(tree_obj.minDepth(tree))
-
