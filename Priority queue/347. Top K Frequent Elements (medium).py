@@ -1,6 +1,6 @@
 '''
 @Project : Class
-@File : 347. Top K Frequent Elements.py
+@File : 347. Top K Frequent Elements (medium).py
 @Author : Herbert
 @Date : 11/30/2023 9:15 AM
 '''
