@@ -28,4 +28,4 @@ class Solution:
 
 
 solution_obj = Solution()
-print(solution_obj.combine(n=1, k=1))
+print(solution_obj.combine(n=5, k=2))
