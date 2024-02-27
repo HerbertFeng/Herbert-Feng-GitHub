@@ -44,3 +44,17 @@ def findCheapestPrice(n, flights, src, dst, k):
                 heapq.heappush(minHeap, (nextDist, nextNode, nextStops))
 
     return -1
+
+'''
+@cache
+def dfs(node,k):
+    if node == 1:
+        return 0
+    if k==-1:
+        return float('inf')
+
+    dis = float('inf')
+    for f,p in dic[node]:
+        dis = min(dfs(f,k-1)+p,dis)
+    return dis
+'''
