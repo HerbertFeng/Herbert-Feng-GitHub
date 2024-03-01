@@ -52,6 +52,7 @@ def shortestPath2(n, edges, start, end):
 
         if node in visited:
             continue
+
         visited.add(node)
 
         for n2, cur_cost in adj[node]:
