@@ -24,4 +24,4 @@ def countPrimes(n):
                 is_prime[j] = False
     return [i for i in range(n) if is_prime[i]]
 
-print(countPrimes(10))
+print(countPrimes(998))
