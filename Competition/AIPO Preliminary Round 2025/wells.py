@@ -4,23 +4,23 @@
 @Author : Herbert
 @Date : 1/3/2025 7:23 PM
 '''
+import heapq
 
-from collections import deque
 
 
 def well_racing(test_cases):
     results = []
 
     for H, J, walls in test_cases:
-
-        queue = deque([(0, 0, 0)])  # (height, left or right, time)
+        q=[(0, 0, 0)]
+        heapq.heapify(q)  # (height, left or right, time)
         visited = {(0, 0)}  # (height, wall)
         wendy_wins = False
         wally_wins = False
 
-        while queue:
-            height, wall, time = queue.popleft()
-
+        while q:
+            height, wall, time = heapq.heappop(q)
+            height = -height
             wally_height = time - 1
 
             if height <= wally_height:
@@ -40,7 +40,7 @@ def well_racing(test_cases):
                 if 0 <= new_height and (new_height, new_wall) not in visited:
                     if new_height >= H or walls[new_height][new_wall] == '.':
                         visited.add((new_height, new_wall))
-                        queue.append((new_height, new_wall, time + 1))
+                        heapq.heappush(q,(-new_height, new_wall, time + 1))
 
         if wally_wins and wendy_wins:
             results.append("WALLY")
